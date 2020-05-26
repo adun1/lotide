@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const assertArrayEqual = function(actual, expected) {
   if (!checkIfArrayEqual(actual, expected))
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   else
@@ -22,12 +22,12 @@ const tail = function(object1) {
   return object1.slice(1);
 };
 
-assertEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+assertArrayEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
 
-assertEqual(tail([]), []);
-assertEqual(tail([1]),[]);
-assertEqual(tail([1,2]), [2]);
+assertArrayEqual(tail([]), []);
+assertArrayEqual(tail([1]),[]);
+assertArrayEqual(tail([1,2]), [2]);
 
 const words = [1,2,3];
 tail(words);
-assertEqual(words.length, 3);
+assertArrayEqual(words.length, 3);
