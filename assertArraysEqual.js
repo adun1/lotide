@@ -16,15 +16,16 @@ const eqArrays = function(a, b) {
   return true;
 };
 
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)); // => true
-console.log(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false)); // => false
+const assertArraysEqual = function(a, b, val) {
+  return assertEqual(eqArrays(a, b), val);
+};
 
-console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true)); // => true
-console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false)); // => false
-
-console.log(assertEqual(eqArrays([], []), true));
-console.log(assertEqual(eqArrays(0, []), false));
-
-console.log(assertEqual(eqArrays([1],[]), false));
-console.log(assertEqual(eqArrays([],[1]), false));
-console.log(assertEqual(eqArrays([1,2], [2]), false));
+console.log(assertArraysEqual([1, 2, 3], [1, 2, 3], true));
+console.log(assertArraysEqual([1, 2, 3], [3, 2, 1], false));
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true));
+console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false)); // => false
+console.log(assertArraysEqual([], [], true));
+console.log(assertArraysEqual(0, [], false));
+console.log(assertArraysEqual([1],[], false));
+console.log(assertArraysEqual([],[1], false));
+console.log(assertArraysEqual([1,2], [2], false));
