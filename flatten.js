@@ -37,4 +37,4 @@ const flattenHelper = function(list) {
 };
 
 assertArraysEqual((flatten([1, 2, [3, 4], 5, [6]])), [1, 2, 3, 4, 5, 6], true);
-assertArraysEqual((flatten([1, 2, [3, 4], 5, [6], [7, [8, 9, [10, [10.5]], 11]]])), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10.5, 11], true);
+assertArraysEqual((flatten([1, 2, [3, 4], 5, [6], [7, [8, 9, [10, [10.5, 'a']], 11]]])), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10.5, 'a', 11], true);
