@@ -1,10 +1,12 @@
 // FUNCTION IMPLEMENTATION
+/*
 const assertEqual = function(actual, expected) {
   if (actual !== expected)
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   else
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
+*/
 
 const eqArrays = function(a, b) {
   if (a.length !== b.length)
@@ -16,16 +18,20 @@ const eqArrays = function(a, b) {
   return true;
 };
 
-const assertArraysEqual = function(a, b, val) {
-  return assertEqual(eqArrays(a, b), val);
+const assertArraysEqual = function(actual, expected, val) {
+  let result = eqArrays(actual, expected);
+  if (result !== val)
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  else
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
 };
 
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3], true));
-console.log(assertArraysEqual([1, 2, 3], [3, 2, 1], false));
-console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true));
-console.log(assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false)); // => false
-console.log(assertArraysEqual([], [], true));
-console.log(assertArraysEqual(0, [], false));
-console.log(assertArraysEqual([1],[], false));
-console.log(assertArraysEqual([],[1], false));
-console.log(assertArraysEqual([1,2], [2], false));
+assertArraysEqual([1, 2, 3], [1, 2, 3], true);
+assertArraysEqual([1, 2, 3], [3, 2, 1], false);
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true);
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false); // => false
+assertArraysEqual([], [], true);
+assertArraysEqual(0, [], false);
+assertArraysEqual([1],[], false);
+assertArraysEqual([],[1], false);
+assertArraysEqual([1,2], [2], false);
