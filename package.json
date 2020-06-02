@@ -1,7 +1,7 @@
 {
   "name": "lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/adun1/lotide.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {"name": "Brian M"},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/adun1/lotide/issues"
